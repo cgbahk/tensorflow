@@ -23,6 +23,9 @@ if [ "${TF_NEED_CUDA}" == "1" ]; then
 fi
 yes "" | ./configure
 
+export TEST_TMPDIR=build
+mkdir -p ${TEST_TMPDIR}
+
 BAZEL_CMD=$1 && shift
 BAZEL_TARGETS=$*
 bazel ${BAZEL_CMD} ${BAZEL_OPTS} ${BAZEL_TARGETS}
