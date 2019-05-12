@@ -24,6 +24,10 @@ fi
 yes "" | ./configure
 
 BAZEL_CMD=$1 && shift
+if [ -z "${BAZEL_CMD}" ]; then
+  echo "-- ERROR: No bazel command given"
+  exit 1
+fi
 BAZEL_TARGETS=$*
 bazel ${BAZEL_CMD} ${BAZEL_OPTS} ${BAZEL_TARGETS}
 
