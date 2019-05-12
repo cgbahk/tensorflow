@@ -1,5 +1,5 @@
 docker-build:
-	./tensorflow/tools/ci_build/linux/libtensorflow_cpu.sh
+	tensorflow/tools/ci_build/linux/custom_docker_build.sh
 
 docker-run:
 	tensorflow/tools/ci_build/linux/custom_docker_run.sh
