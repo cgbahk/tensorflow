@@ -10,6 +10,7 @@ ${DOCKER_BINARY} run \
   --rm -it \
   --pid=host \
   -v ${ROOT_DIR}:/workspace \
+  -v tf-bazel-build:/root/.cache/bazel \
   -w /workspace \
   -e "PYTHON_BIN_PATH=/usr/bin/python" \
   -e "TF_NEED_HDFS=0" \
