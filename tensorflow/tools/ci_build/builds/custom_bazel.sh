@@ -21,7 +21,6 @@ export CC_OPT_FLAGS='-mavx'
 if [ "${TF_NEED_CUDA}" == "1" ]; then
   BAZEL_OPTS="${BAZEL_OPTS} --config=cuda"
 fi
-bazel clean --expunge
 yes "" | ./configure
 
 BAZEL_CMD=$1 && shift
