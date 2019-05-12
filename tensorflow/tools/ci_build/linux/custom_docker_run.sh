@@ -18,4 +18,4 @@ ${DOCKER_BINARY} run \
   -e "TF_NEED_ROCM=${TF_NEED_ROCM}" \
   -e "TF_NEED_OPENCL_SYCL=0" \
   "${DOCKER_IMAGE}" \
-  bash
+  "$@"
