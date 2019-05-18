@@ -20,6 +20,14 @@ tflite-tutorial:
 	  build //tensorflow/contrib/lite/tutorials:mnist_tflite"
 
 ###############################################################################
+# examples
+test-regression:
+	tensorflow/tools/ci_build/linux/custom_docker_run.sh \
+	  bash -c \
+	  "tensorflow/tools/ci_build/builds/custom_bazel.sh \
+	  test //tensorflow/examples/get_started/regression:test"
+
+###############################################################################
 # toco
 
 toco-test:
