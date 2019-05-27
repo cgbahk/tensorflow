@@ -28,6 +28,7 @@ if [[ "$1" != "" ]] && [[ "$1" != "--without_cmake" ]]; then
 fi
 
 # Install dependencies from ubuntu deb repository.
+# This can be omitted in some cases
 apt-key adv --keyserver keyserver.ubuntu.com --recv 084ECFC5828AB726
 apt-get update
 
