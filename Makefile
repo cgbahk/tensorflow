@@ -53,3 +53,11 @@ toco-test:
 tags:
 	docker run --rm -v $(PWD):$(PWD) -w $(PWD) ctags \
 		bash -c "ctags -R ."
+
+###############################################################################
+# Update Makefile
+
+update:
+	mkdir -p .idea
+	rm .idea/Makefile || echo ""
+	cp Makefile .idea/
