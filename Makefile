@@ -5,6 +5,14 @@ docker-run:
 	tensorflow/tools/ci_build/linux/custom_docker_run.sh bash
 
 ###############################################################################
+# git
+git:
+	git checkout master
+	git fetch upstream
+	git merge upstream/master
+	git push
+
+###############################################################################
 # tflite
 
 tflite-interp:
@@ -38,3 +46,10 @@ toco-test:
 	       //tensorflow/contrib/lite/toco/tflite:types_test \
 	       //tensorflow/contrib/lite/toco/tflite:export_test \
 	       //tensorflow/contrib/lite/toco/tflite:import_test"
+
+###############################################################################
+# tags
+.PHONY: tags
+tags:
+	docker run --rm -v $(PWD):$(PWD) -w $(PWD) ctags \
+		bash -c "ctags -R ."
