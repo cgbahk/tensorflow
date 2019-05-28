@@ -67,3 +67,20 @@ update:
 	mkdir -p .idea
 	rm .idea/Makefile || echo ""
 	cp Makefile .idea/
+
+
+###############################################################################
+# doxygen
+
+doxygen-toco:
+	docker run --rm \
+		-v $(PWD):$(PWD) \
+		-w $(PWD)/tensorflow/lite/toco \
+		doxygen \
+		bash -c "/doxygen/build/bin/doxygen"
+
+open-doxygen-toco:
+	xdg-open tensorflow/lite/toco/doxygen/html/index.html
+
+clean-doxygen-toco:
+	sudo rm -rf tensorflow/lite/toco/doxygen
