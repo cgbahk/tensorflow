@@ -38,7 +38,13 @@ test-regression:
 ###############################################################################
 # toco
 
-toco-test:
+build-toco-binary:
+	tensorflow/tools/ci_build/linux/custom_docker_run.sh \
+	  bash -c \
+	  "tensorflow/tools/ci_build/builds/custom_bazel.sh \
+	  build //tensorflow/lite/toco:toco"
+
+test-toco-tflite:
 	tensorflow/tools/ci_build/linux/custom_docker_run.sh \
 	  bash -c \
 	  "tensorflow/tools/ci_build/builds/custom_bazel.sh \
