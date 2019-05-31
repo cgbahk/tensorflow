@@ -15,7 +15,7 @@ git:
 ###############################################################################
 # tflite
 
-tflite-interp:
+test-tflite-interp:
 	tensorflow/tools/ci_build/linux/custom_docker_run.sh \
 	  bash -c \
 	  "tensorflow/tools/ci_build/builds/custom_bazel.sh \
