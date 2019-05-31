@@ -52,9 +52,6 @@ py_test(
         "//tensorflow/python:client_testlib",
         "//third_party/py/numpy",
     ],
-    tags = [
-        "no_oss",
-    ],
 )
 
 # NOTE: This library can't be "testonly" since it needs to be included in the

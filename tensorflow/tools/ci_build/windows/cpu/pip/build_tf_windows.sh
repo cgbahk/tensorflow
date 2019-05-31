@@ -148,10 +148,7 @@ N_JOBS="${NUMBER_OF_PROCESSORS}"
 
 # Define no_tensorflow_py_deps=true so that every py_test has no deps anymore,
 # which will result testing system installed tensorflow
-bazel test \
-  --incompatible_remove_native_http_archive=false \
-  --incompatible_disable_cc_toolchain_label_from_crosstool_proto=false \
-  --announce_rc --config=opt -k --test_output=errors \
+bazel test --announce_rc --config=opt -k --test_output=errors \
   --define=no_tensorflow_py_deps=true --test_lang_filters=py \
   --test_tag_filters=-no_pip,-no_windows,-no_oss,-gpu \
   --build_tag_filters=-no_pip,-no_windows,-no_oss,-gpu --build_tests_only \

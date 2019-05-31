@@ -332,9 +332,6 @@ py_test(
     srcs = ["applications/applications_test.py"],
     shard_count = 2,
     srcs_version = "PY2AND3",
-    tags = [
-        "no_oss",
-    ],
     deps = [
         ":keras",
         "//tensorflow/python:client_testlib",
@@ -778,10 +775,7 @@ py_test(
     srcs = ["engine/training_test.py"],
     shard_count = 16,
     srcs_version = "PY2AND3",
-    tags = [
-        "notsan",
-        "no_oss",
-    ],
+    tags = ["notsan"],
     deps = [
         ":keras",
         "//tensorflow/python:client_testlib",

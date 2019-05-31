@@ -2762,9 +2762,6 @@ cuda_py_test(
         "//tensorflow/python:variables",
         "//tensorflow/python/eager:context",
     ],
-    tags = [
-        "no_oss",
-    ],
     shard_count = 10,
 )
 
