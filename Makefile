@@ -29,6 +29,12 @@ tflite-tutorial:
 	  build //tensorflow/lite/tutorials:mnist_tflite; \
 	  bazel-bin/tensorflow/lite/tutorials/mnist_tflite --model_file ${mnist-tflite-model-file}"
 
+# inception
+inception-test:
+	tensorflow/tools/ci_build/linux/custom_docker_run.sh \
+	  bash -c \
+	  "tensorflow/tools/ci_build/builds/custom_bazel.sh \
+	  test //tensorflow/lite/tools/accuracy/ilsvrc:inception_preprocessing_test"
 
 ###############################################################################
 # examples
