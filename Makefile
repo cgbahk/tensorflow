@@ -22,10 +22,13 @@ test-tflite-interp:
 	  test //tensorflow/lite:interpreter_test"
 
 tflite-tutorial:
+    # Note: model should source 28x28 input, and make one hot data
 	tensorflow/tools/ci_build/linux/custom_docker_run.sh \
 	  bash -c \
 	  "tensorflow/tools/ci_build/builds/custom_bazel.sh \
-	  build //tensorflow/lite/tutorials:mnist_tflite"
+	  build //tensorflow/lite/tutorials:mnist_tflite; \
+	  bazel-bin/tensorflow/lite/tutorials/mnist_tflite --model_file ${mnist-tflite-model-file}"
+
 
 ###############################################################################
 # examples
