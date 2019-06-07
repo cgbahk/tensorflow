@@ -1,0 +1,2 @@
+REPO = https://github.com/frogermcs/MNIST-TFLite
+FILE = notebooks/mnist_model.tflite

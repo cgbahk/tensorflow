@@ -75,7 +75,10 @@ def main(_):
   for input_data in test_image_generator():
     output = run_eval(interpreter, input_data[0])
     total += 1
-    if output == input_data[1]:
+    # TODO turn back to original
+    #      model should source 28x28 input, and make one hot data
+    # if output == input_data[1]:  # original
+    if output[input_data[1]] > 0.5:
       num_correct += 1
     if total % 500 == 0:
       print('Accuracy after %i images: %f' %
