@@ -39,6 +39,21 @@ py_test(
     ],
 )
 
+py_test(
+    name = "interpreter_test_custom",
+    srcs = ["interpreter_test_custom.py"],
+    data = [":interpreter_test_data"],
+    srcs_version = "PY2AND3",
+    tags = ["no_oss"],
+    deps = [
+        ":interpreter",
+        "//tensorflow/python:client_testlib",
+        "//tensorflow/python:framework_test_lib",
+        "//tensorflow/python:platform",
+        "//third_party/py/numpy",
+    ],
+)
+
 py_binary(
     name = "tflite_convert",
     srcs = ["tflite_convert.py"],
