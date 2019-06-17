@@ -21,6 +21,12 @@ test-tflite-interp:
 	  "tensorflow/tools/ci_build/builds/custom_bazel.sh \
 	  test //tensorflow/lite:interpreter_test"
 
+test-tflite-interp-custom:
+	tensorflow/tools/ci_build/linux/custom_docker_run.sh \
+	  bash -c \
+	  "tensorflow/tools/ci_build/builds/custom_bazel.sh \
+	  test //tensorflow/lite/python:interpreter_test_custom"
+
 MNIST_MODEL = "tensorflow/lite/tutorials/model/mnist_model.tflite"
 tflite-tutorial:
 	tensorflow/tools/ci_build/linux/custom_docker_run.sh \
